@@ -1,10 +1,23 @@
 import React from 'react'
-import './App.scss'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+
+import Navbar from './components/Navbar/Navbar'
+import HeroSection from './components/HeroSection/HeroSection'
+
+import './global.scss'
 
 function App() {
   return (
-    <div className="App">
-      <h1>App</h1>
+    <div>
+      <Router>
+        <div>
+          <Navbar />
+          <Switch>
+            <Route exact path="/" />
+          </Switch>
+          <HeroSection />
+        </div>
+      </Router>
     </div>
   )
 }
