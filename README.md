@@ -1,2 +1,2 @@
-## Lavish Landing Page
+## Huddle Landing Page
 
