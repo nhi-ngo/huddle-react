@@ -1,0 +1,36 @@
+$font-body: 'Open Sans', sans-serif;
+$font-heading: 'Poppins', sans-serif;
+
+// font-size
+$small: 14px;
+
+$white: #fff;
+$blueish: hsl(208, 11%, 55%);
+$darkBlue: hsl(233, 14%, 30%);
+$paleCyan: hsl(193, 100%, 96%);
+$darkCyan: hsl(192, 100%, 9%);
+$pink: hsl(322, 100%, 66%);
+$lightPink: #ff8be3;
+
+// color-gradient
+$pink-gradient: $lightPink, $pink;
+
+@mixin gradient($direction, $list) {
+	background: linear-gradient($direction, $list);
+}
+
+// media-queries
+$breakpoints: (
+	small: 460px,
+	pricing-custom-sm: 642px,
+	pricing-custom-md: 908px,
+	medium: 768px,
+);
+
+@mixin breakpoint($size) {
+	$breakpoint-value: map-get($breakpoints, $size);
+
+	@media screen and (max-width: $breakpoint-value) {
+		@content;
+	}
+}

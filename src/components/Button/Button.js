@@ -3,9 +3,9 @@ import './Button.scss'
 
 const STYLES = ['btn--primary', 'btn--outline']
 
-const SIZES = ['btn--medium', 'btn--large', 'btn--mobile', 'btn--wide']
+const SIZES = ['btn--medium', 'btn--mobile', 'btn--wide']
 
-const COLORS = ['primary', 'blue', 'red', 'green']
+const COLORS = ['primary', 'pink', 'pink-gradient']
 
 const Button = ({
   children,

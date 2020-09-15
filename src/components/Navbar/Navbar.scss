@@ -1,81 +1,55 @@
-.navbar {
-	background: #1c2237;
+@import '../../variables.scss';
+
+.nav {
+	background: $darkCyan;
 	height: 80px;
 	display: flex;
 	justify-content: center;
-	font-size: 1.2rem;
-	// position: sticky;
+	position: sticky;
 	top: 0;
 	z-index: 999;
+
+	&__btn {
+		@include breakpoint(medium) {
+			width: 100%;
+			height: 90px;
+		}
+	}
 }
 
-.navbar-container {
+.nav__container {
 	display: flex;
 	justify-content: space-between;
 	height: 80px;
-}
 
-.container {
-	width: 100%;
-	max-width: 1300px;
-	margin: 0 auto;
-	padding: 0 50px;
-	z-index: 1;
-}
-
-.navbar-logo {
-	display: flex;
-	align-items: center;
-	color: #fff;
-	text-decoration: none;
-	font-size: 2rem;
-	cursor: pointer;
-}
-
-.navbar-icon {
-	margin-right: 0.5rem;
-}
-
-.nav-menu {
-	display: flex;
-	align-items: center;
-	list-style: none;
-}
-
-.nav-item {
-	height: 80px;
-	border-bottom: 2px solid transparent;
-}
-
-.nav-item:hover {
-	border-bottom: 2px solid #f00946;
-}
-
-.nav-link {
-	display: flex;
-	align-items: center;
-	color: #fff;
-	text-decoration: none;
-	padding: 0.5rem 1rem;
-	height: 100%;
+	.logo {
+		@include breakpoint(medium) {
+			position: absolute;
+			transform: translate(10%, 80%);
+		}
+	}
 }
 
 .menu-icon {
 	display: none;
-}
 
-@media screen and (max-width: 960px) {
-	.menu-icon {
+	@include breakpoint(medium) {
 		display: block;
 		position: absolute;
 		top: 0;
 		right: 0;
-		transform: translate(-100%, 60%);
+		transform: translate(-70%, 60%);
 		font-size: 1.8rem;
 		cursor: pointer;
 	}
+}
 
-	.nav-menu {
+.nav__menu {
+	display: flex;
+	align-items: center;
+	list-style: none;
+
+	@include breakpoint(medium) {
 		display: flex;
 		flex-direction: column;
 		width: 100%;
@@ -83,43 +57,50 @@
 		position: absolute;
 		top: 80px;
 		left: -100%;
-		opacity: 1;
+		opacity: 0;
 		transition: all 0.5s ease;
 		margin: 0;
 	}
 
-	.nav-menu.active {
-		background: #1c2237;
-		left: 0;
-		opacity: 1;
-		transition: all 0.6s ease;
-		// z-index: 1;
+	&.active {
+		@include breakpoint(medium) {
+			background: $darkCyan;
+			left: 0;
+			opacity: 1;
+			padding-left: 0;
+		}
 	}
 
-	.nav-item:hover {
-		border: none;
+	.nav__item {
+		height: 80px;
+		border-bottom: 2px solid transparent;
+
+		&:hover {
+			border-bottom: 2px solid $pink;
+
+			@include breakpoint(medium) {
+				border: none;
+			}
+		}
 	}
 
-	.nav-link {
-		padding: 1rem;
-		width: 100%;
-	}
+	.nav__link {
+		display: flex;
+		align-items: center;
+		color: #fff;
+		text-decoration: none;
+		padding: 0.5rem 1rem;
+		height: 100%;
 
-	.nav-link:hover {
-		color: #f00946;
-		transform: scale(1.2);
-		transition: all 0.3s ease;
-	}
+		@include breakpoint(medium) {
+			padding: 1rem;
+			width: 100%;
 
-	.navbar-logo {
-		position: absolute;
-		top: 0;
-		left: 0;
-		transform: translate(25%, 50%);
-	}
-
-	.nav-btn {
-		width: 100%;
-		height: 90px;
+			&:hover {
+				color: $pink;
+				transform: scale(1.2);
+				transition: all 0.3s ease;
+			}
+		}
 	}
 }

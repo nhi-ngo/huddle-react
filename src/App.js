@@ -2,23 +2,26 @@ import React from 'react'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
 import Navbar from './components/Navbar/Navbar'
-import HeroSection from './components/HeroSection/HeroSection'
+import Home from './pages/Home/Home'
+import Services from './pages/Services/Services'
+import Products from './pages/Products/Products'
+import Footer from './components/Footer/Footer'
+import SignUp from './pages/SignUp/SignUp'
 
 import './global.scss'
 
 function App() {
   return (
-    <div>
-      <Router>
-        <div>
-          <Navbar />
-          <Switch>
-            <Route exact path="/" />
-          </Switch>
-          <HeroSection />
-        </div>
-      </Router>
-    </div>
+    <Router>
+      <Navbar />
+      <Switch>
+        <Route path="/" exact component={Home} />
+        <Route path="/services" component={Services} />
+        <Route path="/products" component={Products} />
+        <Route path="/sign-up" component={SignUp} />
+      </Switch>
+      <Footer />
+    </Router>
   )
 }
 

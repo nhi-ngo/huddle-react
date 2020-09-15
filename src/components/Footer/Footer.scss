@@ -1,0 +1,124 @@
+@import '../../variables.scss';
+
+.footer-wrapper {
+	background-color: $darkCyan;
+	flex-direction: column;
+	padding: 2.5rem;
+}
+
+.footer-subscription {
+	flex-direction: column;
+	text-align: center;
+	padding: 24px;
+	color: $white;
+
+	&__heading {
+		font-weight: lighter;
+	}
+
+	&__subheading {
+    font-weight: lighter;
+	}
+
+	&__form-input {
+		font-size: 16px;
+		outline: none;
+		border: none;
+		border-radius: 50px;
+		margin-right: 10px;
+		margin-bottom: 30px;
+    padding: 8px 50px;
+
+		@include breakpoint(medium) {
+			width: 100%;
+      margin-bottom: 10px;
+      text-align: center;
+		}
+
+		&::placeholder {
+      opacity: 0.4;
+		}
+	}
+}
+
+.footer-links {
+	display: flex;
+
+	@include breakpoint(medium) {
+		padding-top: 2rem;
+		padding-left: 3rem;
+	}
+
+	&__container {
+		display: flex;
+
+		@include breakpoint(medium) {
+			flex-direction: column;
+		}
+	}
+
+	&__items {
+		display: flex;
+    flex-direction: column;
+    font-size: $small;
+		margin: 16px;
+		width: 150px;
+
+		&-heading {
+			color: $white;
+		}
+
+		& a {
+			color: $white;
+			text-decoration: none;
+			margin-bottom: 0.5rem;
+
+			&:hover {
+				opacity: 0.6;
+				transition: 0.3s ease-out;
+			}
+		}
+	}
+}
+
+.social-media {
+	max-width: 1000px;
+	width: 100%;
+	margin-top: 16px;
+
+	&__container {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin-top: 40px;
+
+		@include breakpoint(medium) {
+			flex-direction: column;
+			align-items: center;
+
+			& > * {
+				margin-bottom: 16px;
+			}
+		}
+	}
+
+	&__icons {
+		display: flex;
+		justify-content: space-between;
+		width: 180px;
+
+		&-link {
+			color: $white;
+			font-size: 24px;
+		}
+	}
+}
+
+.website-rights {
+	color: $white;
+
+	@include breakpoint(medium) {
+		margin-bottom: 25px;
+		margin-left: 8px;
+	}
+}
