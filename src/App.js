@@ -8,8 +8,6 @@ import Products from './pages/Products/Products'
 import Footer from './components/Footer/Footer'
 import SignUp from './pages/SignUp/SignUp'
 
-import './global.scss'
-
 function App() {
   return (
     <Router>
