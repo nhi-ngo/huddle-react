@@ -1,0 +1,37 @@
+@import '../../variables.scss';
+
+.btn-toggle {
+  padding: 0 25px;
+}
+
+input[type='checkbox'] {
+  display: none;
+}
+
+label {
+	@include gradient(to right, $pink-gradient);
+	text-indent: -9999px;
+	width: 60px;
+	height: 35px;
+	display: block;
+	border-radius: 100px;
+	position: relative;
+	cursor: pointer;
+
+	&:after {
+		content: '';
+		position: absolute;
+		top: 4px;
+		left: 4px;
+		width: 27px;
+		height: 27px;
+		background: $white;
+		border-radius: 50%;
+		transition: all 0.2s;
+	}
+}
+
+input:checked + label:after {
+	left: calc(100% - 5px);
+  transform: translateX(-100%);
+}

@@ -15,6 +15,15 @@
 	}
 }
 
+.pricing__toggle {
+	padding-bottom: 30px;
+
+	&__term {
+		color: $blueish;
+		font-weight: 700;
+	}
+}
+
 .pricing__container {
 	flex-wrap: wrap;
 
@@ -79,15 +88,10 @@
 	}
 
 	.price {
-		font-size: 4.5rem;
+		font-size: 4rem;
+		font-weight: 700;
 		margin: 0;
 	}
-
-	// .duration {
-	// 	font-size: 14px;
-	// 	margin-bottom: 24px;
-	// 	margin-top: 0;
-	// }
 }
 
 .pricing__card-cardFeatures {
@@ -107,3 +111,4 @@
 	color: $paleCyan;
 	@include gradient(to right, $pink-gradient);
 }
+
